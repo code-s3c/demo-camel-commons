@@ -28,7 +28,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sab_quote")
 @NamedQueries({
-    @NamedQuery(name = "quote.listAll", query = "SELECT q FROM Quote q")
+    @NamedQuery(name = "quote.listAll", query = "SELECT q FROM Quote q"),
+    @NamedQuery(name = "quote.findById", query = "SELECT q FROM Quote q WHERE q.id = :id"),
+    @NamedQuery(name = "quote.findBySymbol", query = "SELECT q FROM  Quote q WHERE q.name = :symbol")
 })
 public class Quote {
 
